@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lets Plot</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <form action= "submit" id="submitform" method="post">
+            {% csrf_token %}
+            <div class="container">
+                
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">Whiteboard Plotter</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="">Erase Board</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <p style="font-size:28px;">
+                    What would you like to plot today?
+                </p>
+                
+                
+                    <textarea form="submitform" name="input-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style="position:relative;" rows="10" cols="60" required>Enter the text here...</textarea><br>
+
+                        <button type="submit" class="btn btn-secondary btn-success" style="font-size: 25px"> Let's Plot </button>
+            </div>
+        </form>
+
+        <script>
+            function setbg(color)
+            {
+                document.getElementById("styled").style.background=color;
+            }
+            
+        </script>
+        
+        <style>
+            textarea {
+                resize: none;
+                font-size: 20pt;
+            }
+        </style>
+    </body>
+</html>
