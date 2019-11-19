@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lets Plot</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <form action= "submit" id="submitform" method="post">
+            {% csrf_token %}
+            <div class="container">
+                
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">Whiteboard Plotter</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="">Erase Board</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                     <strong style="font:30px">  Thanks for plotting, this task should finish in about <div class = "alert alert-success" style="color:red" id="count"></div>  </strong>
+
+                   <button id="continue" style= "display:none" action="index" class="btn btn-secondary btn-success" style="font-size: 25px"> New plot </button>
+
+
+            </div>
+        </form>
+
+        <script>
+
+        var time = {{time|safe}}
+
+           // Set the date we're counting down to
+                // Update the count down every 1 second
+
+                var timeleft = time;
+                var downloadTimer = setInterval(function(){
+                  document.getElementById("count").innerHTML = timeleft + " seconds";
+                  timeleft -= 1;
+                  if(timeleft < 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("continue").style.display = 'block';
+                    // document.getElementById("count").innerHTML = "0"
+
+                  }
+                }, 1000);
+
+                // var x = setInterval(function() {
+                // var now = 1000;
+                //   // Find the distance between now and the count down date
+                //   var distance = time * 1000 - now; 
+                //   now = now - 1000; 
+
+                //   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                //   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                //   // Display the result in the element with id="demo"
+                //   document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+
+                //   // If the count down is finished, write some text
+                //   if (distance < 0) {
+                //     clearInterval(x);
+                //     document.getElementById("demo").innerHTML = "EXPIRED";
+                //   }
+                // }, 1000);
+        </script>
+        
+        <style>
+            textarea {
+                resize: none;
+                font-size: 20pt;
+            }
+</style>
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_countdown -->

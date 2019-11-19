@@ -11,7 +11,11 @@
     <body>
         <form action= "submit" id="submitform" method="post">
             {% csrf_token %}
-            <div class="container">
+
+
+
+
+            <div class="container" >
                 
                 <nav class="navbar navbar-inverse">
                     <div class="container-fluid">
@@ -26,17 +30,34 @@
                         </ul>
                     </div>
                 </nav>
-                
-                <p style="font-size:28px;">
-                    What would you like to plot today?
+            <div>
+
+<h1 class="title-page">The World’s First 
+        <span class="animated-box" data-animation="underLine"> <u style="color:blue"><span style="color: black;">Write </span></u>
+
+            <rect x="22" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="44" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="66" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="88" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="110" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="132" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="154" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="176" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="198" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> <rect x="230" width="12" height="6" fill="#FF0404" rx="5" ry="5"></rect> </mask> <g mask="url(#mask3)"> <rect width="230" height="6" fill="#FF0000"></rect> <rect width="230" height="6" fill="#FF0000"></rect></g> </svg></span> and <span class="animated-box" data-animation="strokeoutLine"><strike style="text-decoration: line-through; color: red;"><span style="color: black;">Erase</span></strike> Robot.</h1>
+
+
+<br> <br> 
+                <p style="font-size:32px;color:#3CB4E6">
+                   <b> What would you like to plot today?</b>
                 </p>
+            </div> 
                 
                 
-                    <textarea form="submitform" name="input-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style="position:relative;" rows="10" cols="60" required>Enter the text here...</textarea><br>
+                    <textarea form="submitform" name="input-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style="position:relative; text-transform: uppercase;" required>Enter the text here...</textarea><br>
 
                         <button type="submit" class="btn btn-secondary btn-success" style="font-size: 25px"> Let's Plot </button>
             </div>
         </form>
+
+
+ <style>
+    body {
+  background-color: #EDF5E1;
+}
+</style> 
+
 
         <script>
             function setbg(color)
@@ -49,7 +70,10 @@
         <style>
             textarea {
                 resize: none;
-                font-size: 20pt;
+                font-size: 40pt;
+                    width: 600px;
+                    height: 500px;
+                    outline: none;
             }
         </style>
     </body>
